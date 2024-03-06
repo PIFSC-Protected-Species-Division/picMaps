@@ -1,11 +1,11 @@
 Package: picMaps
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Mapping Utilities for The Pacific Ocean
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Date: March 6, 2024
+Author: Devin S. Johnson
+Maintainer: Devin S. Johnson <devin.johnson@noaa.gov>
+Description: Objects and functions for making plots and maps easier to create in the Pacific Ocean
 Imports: sf, utils, rmapshaper
 License: CC0
 Encoding: UTF-8
