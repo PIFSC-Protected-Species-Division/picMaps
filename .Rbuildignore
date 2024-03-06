@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^testing$
 ^examples$
+^README\.Rmd$
+^README\.md$
