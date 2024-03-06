@@ -1,0 +1,40 @@
+#' @title Functions To Aid Mapping of PIFSC Data
+#'
+#' @description This package is a collection of functions that helps gather spatial data for creating
+#' maps in the Pacific Ocean.
+#'
+#' \tabular{ll}{
+#' Package: \tab picMaps\cr
+#' Version: \tab 0.1.0\cr
+#' Date: \tab March 6, 2024\cr
+#' License: \tab CC0 \cr
+#' LazyLoad: \tab yes\cr
+#' }
+#'
+#' @note This software package is developed and maintained by scientists at the
+#' NOAA Fisheries Pacific Islands Fisheries Science Center and should be
+#' considered a fundamental research communication. The recommendations and
+#' conclusions presented here are those of the authors and this software should
+#' not be construed as official communication by NMFS, NOAA, or the U.S. Dept.
+#' of Commerce. In addition, reference to trade names does not imply endorsement
+#' by the National Marine Fisheries Service, NOAA. While the best efforts have
+#' been made to insure the highest quality, tools such as this are under
+#' constant development and are subject to change.
+#'
+#' @name picMaps-package
+#' @aliases picMaps-package picMaps
+#' @author Devin S. Johnson <devin.johnson@@noaa.gov> (Maintainer)
+"_PACKAGE"
+
+
+
+.onAttach <- function(library, pkgname)
+{
+  info <-utils::packageDescription(pkgname)
+  package <- info$Package
+  version <- info$Version
+  date <- info$Date
+  packageStartupMessage(
+    paste(package, version, paste("(",date, ")", sep=""))
+  )
+}
