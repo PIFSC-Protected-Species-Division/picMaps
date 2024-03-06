@@ -15,7 +15,7 @@ osm_coast(x, keep = 0.2, union = FALSE)
 }
 \description{
 Uses downloaded OSM data for constructing an \code{sf} polygon coastline data object.
-Prior to using this function you must run \code{\link[picMaps]{download_osm}}.
+Prior to using this function you must run \code{\link[picMaps]{osm_download}}.
 }
 \author{
 Josh M. London and Devin S. Johnson

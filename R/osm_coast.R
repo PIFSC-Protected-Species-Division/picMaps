@@ -1,6 +1,6 @@
 #' @title Get A Coastline \code{sf} Polygon Object For Plotting and Mapping
 #' @description Uses downloaded OSM data for constructing an \code{sf} polygon coastline data object.
-#' Prior to using this function you must run \code{\link[picMaps]{download_osm}}.
+#' Prior to using this function you must run \code{\link[picMaps]{osm_download}}.
 #' @param x An \code{sf} spatial object. The coastline will be cropped to the bounding box.
 #' @param keep The amount of data retained after simplification with \code{\link[rmapshaper]{ms_simplify}}
 #' @param union Logical. Should the returned object be returned as a single \code{sf} \code{MULTIPOLYGON} object
