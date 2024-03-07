@@ -2,6 +2,7 @@
 
 export(osm_coast)
 export(osm_download)
+export(set_data_storage)
 import(sf)
 importFrom(rmapshaper,ms_simplify)
 importFrom(sf,st_is_valid)

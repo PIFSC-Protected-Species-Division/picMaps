@@ -10,14 +10,13 @@
 #' @export
 #'
 osm_coast <- function(x, keep=0.2, union=FALSE) {
-  osm_loc <- file.path(system.file(package="picMaps"), "inst", "osm", "osm_gpkg_path.rds")
-  if(!file.exists(osm_loc)) stop("OSM data has not been previously downloaded.\nSee ?picMaps::osm_download")
-  osm_loc <-  readRDS(osm_loc)
+  f <- file.path(get_data_loc(), "osm","osm_coast.gpkg")
+  if(!file.exists(f)) stop("OSM data has not been previously downloaded.\nSee ?picMaps::osm_download")
 
   x_crs <- sf::st_crs(x)
   x <- x |> st_geometry() |> st_transform(4326) |> st_bbox() |> st_as_sfc()
   bboxWKT <- st_as_text(sf::st_geometry(x))
-  land <- st_read(dsn=osm_loc, wkt_filter=bboxWKT)
+  land <- st_read(dsn=f, wkt_filter=bboxWKT)
 
   land <- st_transform(land, crs=x_crs)
   if(keep>0 & keep<1) land <- rmapshaper::ms_simplify(land, keep=keep)

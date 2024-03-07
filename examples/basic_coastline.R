@@ -4,10 +4,7 @@ library(mapview)
 library(crsuggest)
 
 # If this is the first time using {picMaps} you have to download the coastline data first
-# Change this for your machine:
-
-# space_data_dir <- "~/research/projects/spatial_data/osm"
-# osm_download(dir=space_data_dir)
+# See ?picMaps::set_data_storage() and ?picMaps::osm_download
 
 
 # Make some spatial data around Marianas
@@ -17,8 +14,8 @@ prj <- as.numeric(suggest_crs(x)$crs_code[[1]])
 x <- st_transform(x, prj) |> st_as_sf()
 mapview(x)
 
-# 1/3 resolution separated polygons
-marianas <- osm_coast(x, keep=0.33, union=FALSE)
+# Default specs
+marianas <- osm_coast(x)
 mapview(marianas)
 
 

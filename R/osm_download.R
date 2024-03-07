@@ -12,16 +12,14 @@
 
 osm_download <- function(dir = NULL, force = FALSE) {
 
-  if(is.null(dir)) dir <- file.path(system.file(package="picMaps"), "inst", "osm")
-  pkg_inst <- file.path(system.file(package="picMaps"), "inst", "osm")
-  dir.create(pkg_inst, recursive=TRUE)
-  # dir <- file.path("~/research/projects/spatial_files", "osm")
+  dir <- file.path(get_data_loc(), "osm")
   if(file.exists(file.path(dir,'osm_coast.gpkg')) & !force) {
-    warning("OSM data has already been downloaded. Notifying package of location. Use 'force=TRUE' to update.")
+    stop("OSM data has already been downloaded. Use 'force=TRUE' to update.")
   } else {
     inp <- readline(prompt = "This function will download a considerable amount of coastline data.\nAre you sure you want to proceed? [y/n]: ")
     if(tolower(inp)%in%c("n","no")) stop("OSM download crisis averted, phewww!")
     options(timeout = max(1000, getOption("timeout")))
+    dir <- file.path(dir,"osm")
     dir.create(dir, recursive=TRUE)
 
     message("Downloading land polygons ...")
@@ -51,6 +49,5 @@ osm_download <- function(dir = NULL, force = FALSE) {
     m <- paste(readLines(file.path(dir, "land-polygons-complete-4326","README.txt")),"\n")
     message(m)
   }
-  saveRDS(file.path(dir,'osm_coast.gpkg'), file.path(pkg_inst, "osm_gpkg_path.rds"))
 }
 
