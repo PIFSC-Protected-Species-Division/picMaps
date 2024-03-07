@@ -4,11 +4,9 @@
 \alias{osm_download}
 \title{Download Open Street Map Coastline Shapefile from Daylight Map Distribution}
 \usage{
-osm_download(dir = NULL, force = FALSE)
+osm_download(force = FALSE)
 }
 \arguments{
-\item{dir}{Directory to store worldwide high resoultion coastline data.}
-
 \item{force}{Logical. If data has previously been downloaded, it will force a new
 download and update of the OSM data.}
 }

@@ -1,6 +1,5 @@
 #' @title Download Open Street Map Coastline Shapefile from Daylight Map Distribution
 #' @description Downloads OSM data for plotting telemetry data and use distributions.
-#' @param dir Directory to store worldwide high resoultion coastline data.
 #' @param force Logical. If data has previously been downloaded, it will force a new
 #' download and update of the OSM data.
 #' @references https://osmdata.openstreetmap.de/data/land-polygons.html
@@ -10,7 +9,7 @@
 #' @export
 
 
-osm_download <- function(dir = NULL, force = FALSE) {
+osm_download <- function(force = FALSE) {
 
   dir <- file.path(get_data_loc(), "osm")
   if(file.exists(file.path(dir,'osm_coast.gpkg')) & !force) {

@@ -6,7 +6,12 @@ Date: March 7, 2024
 Author: Devin S. Johnson
 Maintainer: Devin S. Johnson <devin.johnson@noaa.gov>
 Description: This package provides objects and functions for making plots and maps easier to create in the Pacific Ocean.
-Imports: sf, utils, rmapshaper
+Imports: 
+    sf,
+    utils,
+    rmapshaper,
+    magrittr,
+    curl
 License: CC0
 Encoding: UTF-8
 LazyData: true
