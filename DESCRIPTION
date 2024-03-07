@@ -1,7 +1,7 @@
 Package: picMaps
 Type: Package
 Title: Mapping Utilities for The Pacific Ocean
-Version: 0.1.9002
+Version: 0.1.9003
 Date: March 7, 2024
 Author: Devin S. Johnson
 Maintainer: Devin S. Johnson <devin.johnson@noaa.gov>

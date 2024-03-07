@@ -4,3 +4,4 @@
 .Ruserdata
 testing
 *.Rproj
+.DS_Store

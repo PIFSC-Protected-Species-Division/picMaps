@@ -14,17 +14,18 @@ x <- st_bbox(c(xmin=198.5, xmax=206, ymin=18.5, ymax=23), crs=4326) %>%
   st_as_sfc()
 prj <- as.numeric(suggest_crs(x)$crs_code[[1]])
 x <- st_transform(x, prj) %>% st_as_sf()
-mapview(x)
+
 
 # Extract some coastline data for plotting
 mhi <- osm_coast(x, 1, TRUE)
 mhi_bb <- mhi %>% st_buffer(20000) %>% st_bbox()
 mapview(mhi)
 
+
 # Extract ETOPO bathymetry data
-mhi_bathy <- etopo_rast(x)
+mhi_bathy <- etopo_rast(x, resolution = 60)
 mhi_bathy[mhi_bathy>10] <- NA
-mapview(mhi_bathy)
+
 
 ### ggplot
 ggplot() + layer_spatial(mhi_bathy) + layer_spatial(mhi, color=NA, fill=gray(.5)) +
