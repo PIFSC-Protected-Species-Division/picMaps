@@ -2,7 +2,7 @@
 % Please edit documentation in R/set_data_storage.R
 \name{set_data_storage}
 \alias{set_data_storage}
-\title{Set Data Sorage Directory}
+\title{Set Data Storage Directory}
 \usage{
 set_data_storage(path = NULL)
 }

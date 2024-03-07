@@ -1,4 +1,4 @@
-#' @title Set Data Sorage Directory
+#' @title Set Data Storage Directory
 #' @param path A directory path specifying where spatial data will be stored for the package
 #' @description
 #' The directory specified by \code{path} will be used to store downloaded spatial data. By storing the
@@ -13,6 +13,11 @@ set_data_storage <- function(path=NULL){
   saveRDS(path, file.path(system.file(package="picMaps"), "inst", "data_loc.rds"))
 }
 
+
+#' @title Show picMaps Data Storage Directory
+#' @description
+#' This function provides the location where `picMaps` is storing and retrieving spatial data.
+#' @export
 
 get_data_loc <- function(){
   x <- file.path(system.file(package="picMaps"), "inst", "data_loc.rds")

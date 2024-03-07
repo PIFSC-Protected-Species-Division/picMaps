@@ -25,6 +25,8 @@ etopo_download <- function(resolution = 60, force = FALSE) {
     }
     dir.create(dir, recursive = TRUE, showWarnings = FALSE)
     # download the files
+    options(timeout = max(1000, getOption("timeout")))
+    message("\nThis download will take some time. Why not grab some coffee?\n")
     res <- curl::multi_download(etopo_url, destfile = file.path(dir, f))
     if (!res$success) {
       warning("the download failed!")
