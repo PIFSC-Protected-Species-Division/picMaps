@@ -29,4 +29,4 @@ mapview(mhi_bathy)
 ### ggplot
 ggplot() + layer_spatial(mhi_bathy) + layer_spatial(mhi, color=NA, fill=gray(.5)) +
   coord_sf(xlim=c(mhi_bb$xmin, mhi_bb$xmax), ylim=c(mhi_bb$ymin, mhi_bb$ymax), expand=FALSE) +
-  theme_bw()
+  theme_bw() + guides(fill=guide_legend(title="Depth (m)"))
