@@ -19,7 +19,7 @@ osm_install <- function(zip_file, force = FALSE, clean_shp=TRUE) {
   } else {
     if(tail(strsplit(zip_file,"/")[[1]],1) != "land-polygons-complete-4326.zip") stop("This does not appear to be the correct file: 'land-polygons-complete-4326.zip'")
     dir.create(dir, recursive=TRUE, showWarnings = FALSE)
-    file.rename(from=zip_file, file.path(dir,"land-polygons-complete-4326.zip"))
+    file.copy(from=zip_file, file.path(dir,"land-polygons-complete-4326.zip"))
 
     message("Unpacking polygons ...")
     unzip(file.path(dir,"land-polygons-complete-4326.zip"), exdir = dir)
