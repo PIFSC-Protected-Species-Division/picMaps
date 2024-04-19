@@ -1,11 +1,12 @@
 #' @title Download Open Street Map Coastline Shapefile from Daylight Map Distribution
 #' @description Downloads OSM data for plotting telemetry data and use distributions.
 #' @param zip_file path to the OSM data .zip file `land-polygons-complete-4326.zip`. If left unspecified, the user will see a directory browser to navigate to it.
-#' See the url in the references to dowload it by hand. Also, see `\link{osm_download}` to download and install it.
+#' See the url in the references to download it by hand. Also, see `\link{osm_download}` to download and install it.
 #' @param force Logical. If data has previously been downloaded or installed, it will force a new
 #' install and update of the OSM data.
 #' @param clean_shp Logical. If `TRUE` the original shape file will be deleted and only the `.gpkg` file will be retained.
-#' @references https://osmdata.openstreetmap.de/data/land-polygons.html
+#' @references Get information here: https://osmdata.openstreetmap.de/data/land-polygons.html and download with this link
+#'  https://osmdata.openstreetmap.de/download/land-polygons-complete-4326.zip
 #' @author Devin S. Johnson and Josh M. London
 #' @importFrom utils download.file unzip tail
 #' @importFrom sf st_read st_write st_is_valid st_make_valid

@@ -8,7 +8,7 @@ osm_install(zip_file, force = FALSE, clean_shp = TRUE)
 }
 \arguments{
 \item{zip_file}{path to the OSM data .zip file `land-polygons-complete-4326.zip`. If left unspecified, the user will see a directory browser to navigate to it.
-See the url in the references to dowload it by hand. Also, see `\link{osm_download}` to download and install it.}
+See the url in the references to download it by hand. Also, see `\link{osm_download}` to download and install it.}
 
 \item{force}{Logical. If data has previously been downloaded or installed, it will force a new
 install and update of the OSM data.}
@@ -19,7 +19,8 @@ install and update of the OSM data.}
 Downloads OSM data for plotting telemetry data and use distributions.
 }
 \references{
-https://osmdata.openstreetmap.de/data/land-polygons.html
+Get information here: https://osmdata.openstreetmap.de/data/land-polygons.html and download with this link
+ https://osmdata.openstreetmap.de/download/land-polygons-complete-4326.zip
 }
 \author{
 Devin S. Johnson and Josh M. London
