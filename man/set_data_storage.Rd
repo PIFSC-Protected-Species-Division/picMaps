@@ -4,7 +4,7 @@
 \alias{set_data_storage}
 \title{Set Data Storage Directory}
 \usage{
-set_data_storage(path = NULL)
+set_data_storage(path = "~/.picmaps_data")
 }
 \arguments{
 \item{path}{A directory path specifying where spatial data will be stored for the package}

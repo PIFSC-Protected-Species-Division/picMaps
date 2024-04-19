@@ -4,11 +4,13 @@
 \alias{osm_download}
 \title{Download Open Street Map Coastline Shapefile from Daylight Map Distribution}
 \usage{
-osm_download(force = FALSE)
+osm_download(force = FALSE, clean_shp = TRUE)
 }
 \arguments{
 \item{force}{Logical. If data has previously been downloaded, it will force a new
 download and update of the OSM data.}
+
+\item{clean_shp}{Logical. If `TRUE` the original shape file will be deleted and only the `.gpkg` file will be retained.}
 }
 \description{
 Downloads OSM data for plotting telemetry data and use distributions.
@@ -17,5 +19,5 @@ Downloads OSM data for plotting telemetry data and use distributions.
 https://osmdata.openstreetmap.de/data/land-polygons.html
 }
 \author{
-Josh M. London and Devin S. Johnson
+Devin S. Johnson and Josh M. London
 }

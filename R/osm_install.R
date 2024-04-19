@@ -1,31 +1,25 @@
 #' @title Download Open Street Map Coastline Shapefile from Daylight Map Distribution
 #' @description Downloads OSM data for plotting telemetry data and use distributions.
-#' @param force Logical. If data has previously been downloaded, it will force a new
-#' download and update of the OSM data.
+#' @param zip_file path to the OSM data .zip file `land-polygons-complete-4326.zip`. If left unspecified, the user will see a directory browser to navigate to it.
+#' See the url in the references to dowload it by hand. Also, see `\link{osm_download}` to download and install it.
+#' @param force Logical. If data has previously been downloaded or installed, it will force a new
+#' install and update of the OSM data.
 #' @param clean_shp Logical. If `TRUE` the original shape file will be deleted and only the `.gpkg` file will be retained.
 #' @references https://osmdata.openstreetmap.de/data/land-polygons.html
 #' @author Devin S. Johnson and Josh M. London
-#' @importFrom utils download.file unzip
+#' @importFrom utils download.file unzip tail
 #' @importFrom sf st_read st_write st_is_valid st_make_valid
 #' @export
 
-
-osm_download <- function(force = FALSE, clean_shp=TRUE) {
-
+osm_install <- function(zip_file, force = FALSE, clean_shp=TRUE) {
+  if(missing(zip_file)) zip_file <- file.choose()
   dir <- file.path(get_data_loc(), "osm_coast")
   if(file.exists(file.path(dir,'osm_coast.gpkg')) & !force) {
     stop("OSM data has already been downloaded. Use 'force=TRUE' to update.")
   } else {
-    inp <- readline(prompt = "This function will download a considerable amount of coastline data.\nAre you sure you want to proceed? [y/n]: \n")
-    if(tolower(inp)%in%c("n","no")) stop("OSM download crisis averted, phewww!")
-    options(timeout = max(1000, getOption("timeout")))
-    # dir <- file.path(dir,"osm")
-    dir.create(dir, recursive=TRUE)
-
-    message("Downloading land polygons ...")
-    download.file("https://osmdata.openstreetmap.de/download/land-polygons-complete-4326.zip",
-                  destfile = file.path(dir,"land-polygons-complete-4326.zip"),
-                  method = "auto")
+    if(tail(strsplit(zip_file,"/")[[1]],1) != "land-polygons-complete-4326.zip") stop("This does not appear to be the correct file: 'land-polygons-complete-4326.zip'")
+    dir.create(dir, recursive=TRUE, showWarnings = FALSE)
+    file.rename(from=zip_file, file.path(dir,"land-polygons-complete-4326.zip"))
 
     message("Unpacking polygons ...")
     unzip(file.path(dir,"land-polygons-complete-4326.zip"), exdir = dir)

@@ -1,10 +1,14 @@
-library(picMaps)
+
 library(sf)
 library(mapview)
 library(crsuggest)
 
+library(picMaps)
 # If this is the first time using {picMaps} you have to download the coastline data first
 # See ?picMaps::set_data_storage() and ?picMaps::osm_download
+# e.g.,
+# set_data_storage("~/.picmaps_data") # You can use whatever path you want
+# osm_download()
 
 
 # Make some spatial data around Marianas
