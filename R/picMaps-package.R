@@ -5,8 +5,8 @@
 #'
 #' \tabular{ll}{
 #' Package: \tab picMaps\cr
-#' Version: \tab 0.1.9003\cr
-#' Date: \tab March 7, 2024\cr
+#' Version: \tab 0.1.9005\cr
+#' Date: \tab June 6, 2024\cr
 #' License: \tab CC0 \cr
 #' LazyLoad: \tab yes\cr
 #' }
