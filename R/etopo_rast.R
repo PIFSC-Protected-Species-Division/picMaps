@@ -42,7 +42,7 @@ etopo_rast <- function(x, resolution = 60, proj=TRUE, ...){
   R <- terra::rast(names = nav$varname, crs = nav$crs, ext = terra::ext(nav$ext), nrows = nav$count[2], ncols = nav$count[1])
   terra::values(R) <-  t(M)
   R <- terra::flip(R, "vertical")
-  if(proj) R <- terra::project(x=R, y=terra::crs(x), ...)
+  if(proj) R <- terra::project(x=R, y=terra::crs(terra::vect(x)), ...)
   return(R)
 }
 
