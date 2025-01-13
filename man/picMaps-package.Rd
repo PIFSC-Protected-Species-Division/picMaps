@@ -11,8 +11,8 @@ maps in the Pacific Ocean.
 
 \tabular{ll}{
 Package: \tab picMaps\cr
-Version: \tab 0.1.9003\cr
-Date: \tab March 7, 2024\cr
+Version: \tab 0.1.9006\cr
+Date: \tab January 13, 2025\cr
 License: \tab CC0 \cr
 LazyLoad: \tab yes\cr
 }
