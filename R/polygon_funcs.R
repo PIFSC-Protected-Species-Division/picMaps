@@ -14,6 +14,7 @@ hawaii_eez <- function(){
 mariana_eez <- function(){
   x <- file.path(system.file(package="picMaps"), "inst", "CNMIeez", "CNMIeez.shp")
   y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <- st_shift_longitude(y)
   st_geometry(y) <- "geometry"
   return(y)
 }
@@ -24,6 +25,7 @@ mariana_eez <- function(){
 papahanaumokuakea <- function(){
   x <- file.path(system.file(package="picMaps"), "inst", "pmnm", "pmnm.shp")
   y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <- st_shift_longitude(y)
   st_geometry(y) <- "geometry"
   return(y)
 }
