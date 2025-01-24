@@ -1,8 +1,8 @@
 Package: picMaps
 Type: Package
 Title: Mapping Utilities for The Pacific Ocean
-Version: 0.1.9008
-Date: January 14, 2025
+Version: 0.1.9009
+Date: January 24, 2025
 Author: Devin S. Johnson
 Maintainer: Devin S. Johnson <devin.johnson@noaa.gov>
 Description: This package provides objects and functions for making plots and maps easier to create in the Pacific Ocean.
@@ -13,7 +13,8 @@ Imports:
     magrittr,
     curl,
     terra,
-    ncdf4
+    ncdf4,
+    units
 License: CC0
 Encoding: UTF-8
 LazyData: true
