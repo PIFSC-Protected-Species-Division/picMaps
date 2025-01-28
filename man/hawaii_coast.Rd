@@ -4,7 +4,7 @@
 \alias{hawaii_coast}
 \title{Coast polygons for Main Hawaiian Islands}
 \usage{
-hawaii_coast(keep = 0.5, union = TRUE, crs = 6633)
+hawaii_coast(keep = 0.5, union = TRUE, crs = 4326)
 }
 \arguments{
 \item{keep}{see \code{\link[picMaps]{osm_coast}}}
@@ -12,7 +12,7 @@ hawaii_coast(keep = 0.5, union = TRUE, crs = 6633)
 \item{union}{see \code{\link[picMaps]{osm_coast}}}
 
 \item{crs}{A coordinate system object, See \code{\link[sf]{st_transform}}. Defaults to
-ESPG = 6633, the official state projection.}
+ESPG = 4326 with 0-360 longitude values.}
 }
 \description{
 Coast polygons for Main Hawaiian Islands

@@ -4,7 +4,7 @@
 \alias{mariana_coast}
 \title{Coast polygons for the Mariana Islands}
 \usage{
-mariana_coast(keep = 0.5, union = TRUE, crs = 6637)
+mariana_coast(keep = 0.5, union = TRUE, crs = 4326)
 }
 \arguments{
 \item{keep}{see \code{\link[picMaps]{osm_coast}}}
@@ -12,7 +12,7 @@ mariana_coast(keep = 0.5, union = TRUE, crs = 6637)
 \item{union}{see \code{\link[picMaps]{osm_coast}}}
 
 \item{crs}{A coordinate system object, See \code{\link[sf]{st_transform}}. Defaults to
-ESPG = 6637, the Guam map grid projection (UTM zone 55N).}
+ESPG = 4326 with 0-360 longitude values}
 }
 \description{
 Coast polygons for the Mariana Islands
