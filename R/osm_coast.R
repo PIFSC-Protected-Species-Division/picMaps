@@ -14,11 +14,23 @@ osm_coast <- function(x, keep=0.2, union=FALSE) {
   if(!file.exists(f)) stop("OSM data has not been previously downloaded.\nSee ?picMaps::osm_download")
 
   x_crs <- sf::st_crs(x)
-  x <- x %>%  st_geometry() %>%  st_transform(4326) %>%  st_wrap_dateline() %>% st_bbox() %>%  st_as_sfc()
-  bboxWKT <- st_as_text(sf::st_geometry(x))
-  land <- st_read(dsn=f, wkt_filter=bboxWKT)
+  is_shifted <- st_is_longlat(x) & st_bbox(x)[3]>180
+  x <- x %>%  st_geometry() %>%  st_transform(4326) %>% st_bbox() %>%  st_as_sfc() %>% st_wrap_dateline()
+  x <- st_cast(x, "POLYGON")
+
+  land <- NULL
+  for(i in 1:length(x)){
+    bboxWKT <- st_as_text(sf::st_geometry(x[i]))
+    tmp <- st_read(dsn=f, wkt_filter=bboxWKT, quiet = TRUE)
+    if(nrow(tmp)==0){
+      next
+    } else{
+      land <- rbind(land, tmp)
+    }
+  }
 
   land <- st_transform(land, crs=x_crs)
+  if(is_shifted) land <- st_shift_longitude(land)
   if(keep>0 & keep<1) land <- rmapshaper::ms_simplify(land, keep=keep)
   if(union) land <- st_geometry(land) |> st_union()
 
