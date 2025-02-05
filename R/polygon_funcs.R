@@ -30,4 +30,122 @@ papahanaumokuakea <- function(){
   return(y)
 }
 
+#' @title American Samoa US EEZ boundary polygon
+#' @importFrom sf read_sf
+#' @export
+am_samoa_eez <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "american_samoa_eez", "american_samoa_eez.shp")
+  y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <- st_shift_longitude(y)
+  st_geometry(y) <- "geometry"
+  return(y)
+}
+
+#' @title Howland and Baker Islands US EEZ boundary polygon
+#' @importFrom sf read_sf
+#' @export
+howland_baker_eez <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "howland_baker_eez", "howland_baker_eez.shp")
+  y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <- st_shift_longitude(y)
+  st_geometry(y) <- "geometry"
+  return(y)
+}
+
+#' @title Jarvis Islands US EEZ boundary polygon
+#' @importFrom sf read_sf
+#' @export
+jarvis_eez <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "jarvis_eez", "jarvis_eez.shp")
+  y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <- st_shift_longitude(y)
+  st_geometry(y) <- "geometry"
+  return(y)
+}
+
+
+#' @title Johnston Atoll US EEZ boundary polygon
+#' @importFrom sf read_sf
+#' @export
+johnson_eez <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "johnston_eez", "johnston_eez.shp")
+  y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <- st_shift_longitude(y)
+  st_geometry(y) <- "geometry"
+  return(y)
+}
+
+
+#' @title Palmyra Kingman US EEZ boundary polygon
+#' @importFrom sf read_sf
+#' @export
+palmyra_kingman_eez <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "palmyra_kingman_eez", "palmyra_kingman_eez.shp")
+  y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <- st_shift_longitude(y)
+  st_geometry(y) <- "geometry"
+  return(y)
+}
+
+#' @title Palmyra Kingman US EEZ boundary polygon
+#' @importFrom sf read_sf
+#' @export
+wake_eez <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "wake_eez", "wake_eez.shp")
+  y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <-suppressWarnings(st_shift_longitude(y))
+  st_geometry(y) <- "geometry"
+  return(y)
+}
+
+
+#' @title All Pacific Island US EEZ
+#' @importFrom sf read_sf
+#' @export
+all_eez <- function(){
+y <- vector("list", 5)
+y[[1]] <- hawaii_eez()
+y[[1]]$eez <- "Hawaii"
+y[[2]] <- howland_baker_eez()
+y[[2]]$eez <- "howland_baker"
+y[[3]] <- jarvis_eez()
+y[[3]]$eez <- "jarvis"
+y[[4]] <- palmyra_kingman_eez()
+y[[4]]$eez <- "palmyra_kingman"
+y[[5]] <- wake_eez()
+y[[5]]$eez <- "wake"
+
+out <- do.call("rbind", y)
+out <- st_as_sf(out)
+out <- st_shift_longitude(out)
+return(out)
+
+}
+
+
+################################################################################
+
+#' @title NW Hawaiian Islands polygons
+#' @importFrom sf read_sf
+#' @export
+nwhi <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "nwhi_coast", "Coastline.shp")
+  y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <- st_shift_longitude(y)
+  st_geometry(y) <- "geometry"
+  return(y)
+}
+
+#' @title Pelagic False Killer Whale Management Area Polygon
+#' @importFrom sf read_sf
+#' @export
+pfkw_mgmt <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "pelagicFKW", "pFKW_MgmtArea_line.shp")
+  y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <- st_shift_longitude(y)
+  st_geometry(y) <- "geometry"
+  y <- st_cast(y, "POLYGON")
+  return(y)
+}
+
 

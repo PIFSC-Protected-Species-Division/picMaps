@@ -17,10 +17,8 @@ install.packages('picMaps',
 
 #### Source
 
-*You will need a C++ compiler for R*
-
 ``` r
-install.packages('crawlUtils', type='source', 
+install.packages('picMaps', type='source', 
                  repos=c('https://pifsc-protected-species-division.r-universe.dev','https://cloud.r-project.org')
 )
 ```
@@ -94,12 +92,12 @@ adequate.`union=FALSE` will maintain separate single polygons for land.
 library(sf)
 #> Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
 library(terra)
-#> terra 1.7.71
+#> terra 1.8.10
 library(crsuggest)
 #> Using the EPSG Dataset v10.019, a product of the International Association of Oil & Gas Producers. 
 #> Please view the terms of use at https://epsg.org/terms-of-use.html.
 library(picMaps)
-#> picMaps 0.1.9004 (April 19, 2024)
+#> picMaps 0.1.9011 (January 27, 2025)
 
 x <- st_bbox(c(xmin=198.5, xmax=206, ymin=18.5, ymax=23), crs=4326) |>
   st_as_sfc()
@@ -107,15 +105,7 @@ prj <- as.numeric(suggest_crs(x)$crs_code[[1]])
 x <- st_transform(x, prj) |> st_as_sf()
 
 mhi <- osm_coast(x, keep=0.2, union=FALSE)
-#> Reading layer `osm_coast' from data source 
-#>   `/Users/devin.johnson/.picmaps_data/osm_coast/osm_coast.gpkg' 
-#>   using driver `GPKG'
-#> Re-reading with feature count reset from 118 to 117
-#> Simple feature collection with 117 features and 0 fields
-#> Geometry type: POLYGON
-#> Dimension:     XY
-#> Bounding box:  xmin: -160.5453 ymin: 18.91069 xmax: -154.8067 ymax: 22.23542
-#> Geodetic CRS:  WGS 84
+#> Re-reading with feature count reset from 120 to 119
 ```
 
 Now we will obtain the associated bathysphere data

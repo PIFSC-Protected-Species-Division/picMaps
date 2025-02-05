@@ -36,6 +36,8 @@ osm_coast <- function(x, keep=0.2, union=FALSE) {
 
   land <- st_as_sf(land)
 
+  st_geometry(land) <- "geometry"
+
   return(land)
 }
 

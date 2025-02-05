@@ -30,10 +30,8 @@ install.packages('picMaps',
 
 #### Source
 
-*You will need a C++ compiler for R*
-
 ```{r, eval=FALSE}
-install.packages('crawlUtils', type='source', 
+install.packages('picMaps', type='source', 
                  repos=c('https://pifsc-protected-species-division.r-universe.dev','https://cloud.r-project.org')
 )
 ```
