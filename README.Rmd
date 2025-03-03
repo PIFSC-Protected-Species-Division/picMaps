@@ -110,7 +110,7 @@ library(ggspatial)
 tropic_ocean <- rev(c("#8aeed5","#63b9db","#4479e1","#2645e0","#071eed"))
         
 ggplot() +
-  layer_spatial(data=bathy, ) +
+  layer_spatial(data=bathy) +
   scale_fill_gradientn(colours=tropic_ocean, name="Depth (m)", na.value = NA) +
   layer_spatial(data=mhi, fill="tan") +
   theme_bw()
