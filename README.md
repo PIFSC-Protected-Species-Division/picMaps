@@ -119,7 +119,6 @@ And finally, use them in a plot.
 
 ``` r
 library(ggplot2)
-library(ggplot2)
 library(ggspatial)
 
 tropic_ocean <- rev(c("#8aeed5","#63b9db","#4479e1","#2645e0","#071eed"))
