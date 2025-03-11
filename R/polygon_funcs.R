@@ -67,7 +67,7 @@ jarvis_eez <- function(){
 #' @title Johnston Atoll US EEZ boundary polygon
 #' @importFrom sf read_sf
 #' @export
-johnson_eez <- function(){
+johnston_eez <- function(){
   x <- file.path(system.file(package="picMaps"), "inst", "johnston_eez", "johnston_eez.shp")
   y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
   y <- st_shift_longitude(y)
