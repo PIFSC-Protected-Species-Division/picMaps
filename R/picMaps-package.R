@@ -3,14 +3,6 @@
 #' @description This package is a collection of functions that helps gather spatial data for creating
 #' maps in the Pacific Ocean.
 #'
-#' \tabular{ll}{
-#' Package: \tab picMaps\cr
-#' Version: \tab 0.1.9012\cr
-#' Date: \tab February 4, 2025\cr
-#' License: \tab CC0 \cr
-#' LazyLoad: \tab yes\cr
-#' }
-#'
 #' @note This software package is developed and maintained by scientists at the
 #' NOAA Fisheries Pacific Islands Fisheries Science Center and should be
 #' considered a fundamental research communication. The recommendations and
