@@ -149,3 +149,15 @@ pfkw_mgmt <- function(){
 }
 
 
+#' @title Longline exclusion zone
+#' @importFrom sf read_sf
+#' @export
+longline_exclusion <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "mhi_lez", "LonglineZonePoly.shp")
+  y <- read_sf(x) |> st_geometry(y) |> st_transform(4326) |> st_as_sf()
+  y <- st_shift_longitude(y)
+  st_geometry(y) <- "geometry"
+  y <- st_cast(y, "POLYGON")
+  return(y)
+}
+
