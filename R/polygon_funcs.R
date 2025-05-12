@@ -149,7 +149,7 @@ pfkw_mgmt <- function(){
 }
 
 
-#' @title Longline exclusion zone
+#' @title Main Hawaiian Islands Longline Exclusion Zone
 #' @importFrom sf read_sf
 #' @export
 longline_exclusion <- function(){
