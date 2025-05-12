@@ -4,14 +4,12 @@
 \alias{etopo_rast}
 \title{Extract Bathymetry Data From Downloaded ETOPO 2022 data.}
 \usage{
-etopo_rast(x, resolution = 60, proj = TRUE, ...)
+etopo_rast(x, resolution = 60, ...)
 }
 \arguments{
 \item{x}{an \code{sf} spatial object that will define the extent of the bathymetry raster.}
 
 \item{resolution}{Resolution of the ETOPO bathymetry raster, either \code{60} or \code{30} arc-seconds. Defaults to \code{resolution = 60}.}
-
-\item{proj}{Logical. Should the resulting raster be projected to the same CRS as \code{x}? Defaults to \code{project = TRUE}.}
 
 \item{...}{Addtional arguments passed to \code{terra::\link[terra]{project}}.}
 }

@@ -13,7 +13,6 @@
 #' }
 #' @importFrom terra ext rast values flip project crs rotate
 #' @export
-
 etopo_rast <- function(x, resolution = 60, ...){
   . <- NULL
   dir <- file.path(get_data_loc(), "etopo")
@@ -35,9 +34,9 @@ etopo_rast <- function(x, resolution = 60, ...){
 }
 
 
-#'---------
-#' Utility funcs
-#'--------------
+# ---------
+# Utility funcs
+#--------------
 
 is_longlat_360 <- function(x){
   if(!st_is_longlat(x)) return(FALSE)
