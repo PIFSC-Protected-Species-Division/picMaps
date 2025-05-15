@@ -41,5 +41,9 @@ etopo_rast <- function(x, resolution = 60, ...){
 is_longlat_360 <- function(x){
   if(!st_is_longlat(x)) return(FALSE)
   b <- st_bbox(x)
-  if(any(b[c(1,3)]>180)) return(TRUE)
+  if(any(b[c(1,3)]>180)){
+    return(TRUE)
+  } else{
+    return(FALSE)
+  }
 }
