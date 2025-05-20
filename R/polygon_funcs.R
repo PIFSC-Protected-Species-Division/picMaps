@@ -103,17 +103,19 @@ wake_eez <- function(){
 #' @importFrom sf read_sf
 #' @export
 all_eez <- function(){
-y <- vector("list", 5)
+y <- vector("list", 6)
 y[[1]] <- hawaii_eez()
 y[[1]]$eez <- "Hawaii"
 y[[2]] <- howland_baker_eez()
-y[[2]]$eez <- "howland_baker"
+y[[2]]$eez <- "Howland_Baker"
 y[[3]] <- jarvis_eez()
-y[[3]]$eez <- "jarvis"
+y[[3]]$eez <- "Jarvis"
 y[[4]] <- palmyra_kingman_eez()
-y[[4]]$eez <- "palmyra_kingman"
+y[[4]]$eez <- "Palmyra_Kingman"
 y[[5]] <- wake_eez()
-y[[5]]$eez <- "wake"
+y[[5]]$eez <- "Wake"
+y[[6]] <- johnston_eez()
+y[[6]]$eez <- "Johnston"
 
 out <- do.call("rbind", y)
 out <- st_as_sf(out)
