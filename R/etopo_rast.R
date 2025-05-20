@@ -26,9 +26,12 @@ etopo_rast <- function(x, resolution = 60, ...){
   filename <- file.path(dir,f)
   if(!file.exists(filename)) stop("ETOPO data does not seem to be downloaded for this resolution. See ?picMaps::set_data_storage() and ?picMaps::etopo_download()")
 
-  bathy <- terra::rast(filename)
-  if(is_longlat_360(x)) bathy <- terra::rotate(bathy, left=FALSE)
   bb <- x %>% st_transform(4326)
+  bathy <- terra::rast(filename)
+  if(use_long_360(bb)){
+    bathy <- terra::rotate(bathy, left=FALSE)
+    bb <- st_shift_longitude(bb)
+  }
   bathy <- terra::crop(bathy, bb)
   return(bathy)
 }
@@ -38,12 +41,14 @@ etopo_rast <- function(x, resolution = 60, ...){
 # Utility funcs
 #--------------
 
-is_longlat_360 <- function(x){
-  if(!st_is_longlat(x)) return(FALSE)
+use_long_360 <- function(x){
+  if(!st_is_longlat(x)) stop("x must be in lon/lat coordinates")
   b <- st_bbox(x)
   if(any(b[c(1,3)]>180)){
     return(TRUE)
-  } else{
+  } else if(b[1]/b[3] < 0){
+    return(TRUE)
+  } else {
     return(FALSE)
   }
 }
