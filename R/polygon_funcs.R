@@ -163,3 +163,12 @@ longline_exclusion <- function(){
   return(y)
 }
 
+#' @title Central Pacific Boundary for Pelagic False Killer Whales
+#' @importFrom sf st_bbox st_as_sfc st_as_sf
+#' @export
+cenpac <- function(){
+  cenpac <- c(174,0,223,43)
+  names(cenpac) <- c("xmin","ymin","xmax","ymax")
+  cenpac <- st_as_sfc(st_bbox(cenpac), crs=4326) %>% st_as_sf(crs=4326)
+  cenpac
+}
