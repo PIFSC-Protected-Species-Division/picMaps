@@ -1,3 +1,14 @@
+#' @title Main Hawaiian Islands Region Boundary
+#' @importFrom sf st_transform st_buffer st_convex_hull st_shift_longitude
+#' @export
+mhi_region <- function(){
+  hi <- hawaii_coast(keep = 0.75) %>% st_transform(32604) %>% st_buffer(72000)
+  out <- st_convex_hull(hi)
+  out <- st_transform(out, 4326) %>% st_shift_longitude()
+  return(out)
+}
+
+
 #' @title Hawaiian Island EEZ boundary polygon
 #' @importFrom sf read_sf
 #' @export
