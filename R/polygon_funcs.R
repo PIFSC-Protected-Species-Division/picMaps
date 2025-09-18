@@ -183,3 +183,13 @@ cenpac <- function(){
   cenpac <- st_as_sfc(st_bbox(cenpac), crs=4326) %>% st_as_sf(crs=4326)
   cenpac
 }
+
+#' @title Lalo Islands
+#' @importFrom sf read_sf
+#' @export
+lalo <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "lalo", "lalo.shp")
+  y <- read_sf(x)
+  y <- st_shift_longitude(y)
+  return(y)
+}
