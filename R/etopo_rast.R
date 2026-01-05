@@ -29,7 +29,7 @@ etopo_rast <- function(x, resolution = 60, ...){
   bb <- x %>% st_transform(4326)
   bathy <- terra::rast(filename)
   if(use_long_360(bb)){
-    bathy <- terra::rotate(bathy, left=FALSE)
+    bathy <- terra::rotate(bathy)
     bb <- st_shift_longitude(bb)
   }
   bathy <- terra::crop(bathy, bb)
