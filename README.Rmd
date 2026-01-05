@@ -70,6 +70,8 @@ osm_download(force = FALSE, clean_shp=TRUE)
 
 If `force=TRUE` the data will be download even if `picMaps` detects the data in the storage directory. When data is downloaded. The `.shp` files will be imported to `R` and transformed to a searchable `.gpkg` file. If `clean_shp=TRUE` the downloaded `.shp` files will be deleted.
 
+Occasionally, the download capability might not work for some system setups. So visit the website <https://osmdata.openstreetmap.de/data/land-polygons.html> and hit the first download button labeled: "Format: Shapefile, Projection: WGS84 (Large polygons not split)". Upon completion, move the "land-polygons-complete-4326.zip" file to the directory chosen in the `set_data_storage()` step. To get a refresher, the function `get_data_loc()` will show you what is currently set. After this, you should be able to run the `osm_download()` function and it will use the manually downloaded zip file. 
+
 To download the ETOPO bathymetry rasters, use the following
 
 ```{r, eval=FALSE}

@@ -67,6 +67,17 @@ data in the storage directory. When data is downloaded. The `.shp` files
 will be imported to `R` and transformed to a searchable `.gpkg` file. If
 `clean_shp=TRUE` the downloaded `.shp` files will be deleted.
 
+Occasionally, the download capability might not work for some system
+setups. So visit the website
+<https://osmdata.openstreetmap.de/data/land-polygons.html> and hit the
+first download button labeled: “Format: Shapefile, Projection: WGS84
+(Large polygons not split)”. Upon completion, move the
+“land-polygons-complete-4326.zip” file to the directory chosen in the
+`set_data_storage()` step. To get a refresher, the function
+`get_data_loc()` will show you what is currently set. After this, you
+should be able to run the `osm_download()` function and it will use the
+manually downloaded zip file.
+
 To download the ETOPO bathymetry rasters, use the following
 
 ``` r
@@ -90,14 +101,16 @@ adequate.`union=FALSE` will maintain separate single polygons for land.
 
 ``` r
 library(sf)
-#> Linking to GEOS 3.11.0, GDAL 3.5.3, PROJ 9.1.0; sf_use_s2() is TRUE
+#> Warning: package 'sf' was built under R version 4.5.2
+#> Linking to GEOS 3.13.0, GDAL 3.8.5, PROJ 9.5.1; sf_use_s2() is TRUE
 library(terra)
-#> terra 1.8.10
+#> Warning: package 'terra' was built under R version 4.5.2
+#> terra 1.8.86
 library(crsuggest)
 #> Using the EPSG Dataset v10.019, a product of the International Association of Oil & Gas Producers. 
 #> Please view the terms of use at https://epsg.org/terms-of-use.html.
 library(picMaps)
-#> picMaps 0.1.9011 (January 27, 2025)
+#> picMaps 0.1.9022 (January 5, 2026)
 
 x <- st_bbox(c(xmin=198.5, xmax=206, ymin=18.5, ymax=23), crs=4326) |>
   st_as_sfc()
@@ -105,7 +118,6 @@ prj <- as.numeric(suggest_crs(x)$crs_code[[1]])
 x <- st_transform(x, prj) |> st_as_sf()
 
 mhi <- osm_coast(x, keep=0.2, union=FALSE)
-#> Re-reading with feature count reset from 120 to 119
 ```
 
 Now we will obtain the associated bathysphere data
@@ -119,6 +131,7 @@ And finally, use them in a plot.
 
 ``` r
 library(ggplot2)
+#> Warning: package 'ggplot2' was built under R version 4.5.2
 library(ggspatial)
 
 tropic_ocean <- rev(c("#8aeed5","#63b9db","#4479e1","#2645e0","#071eed"))
@@ -128,7 +141,7 @@ ggplot() +
   scale_fill_gradientn(colours=tropic_ocean, name="Depth (m)", na.value = NA) +
   layer_spatial(data=mhi, fill="tan") +
   theme_bw()
-#> Warning: Removed 9376 rows containing missing values or values outside the scale range
+#> Warning: Removed 5226 rows containing missing values or values outside the scale range
 #> (`geom_raster()`).
 ```
 
