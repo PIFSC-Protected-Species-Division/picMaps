@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <title>Coastline</title>
+                <onlink>https://geodata.hawaii.gov/arcgis/rest/services/Terrestrial/MapServer/3</onlink>
+                <onlink>https://files.hawaii.gov/dbedt/op/gis/data/coastline.pdf</onlink>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>[Metadata]  Description:  Coastlines for the main eight Hawaiian Islands. Source:  USGS Digital Line Graphs, 1983 version.  Extracted from USGS Digital Line Graphs by Office of Planning staff, 1988.  June 2024:  Hawaii Statewide GIS Program staff removed extraneous fields 
+that had been added as part of a 2016 GIS database conversion and were
+ no longer needed.For additional information, please refer to complete metadata at https://files.hawaii.gov/dbedt/op/gis/data/coastline.pdf or contact Hawaii Statewide GIS Program, Office of Planning and Sustainable Development, State of Hawaii; PO Box 2359, Honolulu, HI 96804; (808) 587-2846; email: gis@hawaii.gov; Website: https://planning.hawaii.gov/gis.</abstract>
+            <purpose>Coastlines of the main 8 Hawaiian Islands.</purpose>
+        </descript>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>Hawaii</themekey>
+                <themekey>DBEDT</themekey>
+                <themekey>Office of Planning</themekey>
+                <themekey>Boundaries</themekey>
+                <themekey>Coastline</themekey>
+                <themekey>Islands</themekey>
+                <themekey>HawaiiStateGIS</themekey>
+                <themekey>Terrestrial</themekey>
+            </theme>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>State of Hawaii Terms of UseThe
+ contents of this web page are public domain and to the extent indicated
+ otherwise in the Terms of Use, are exempt from Terms of Use policy 
+restrictions. There are no expressed warranties associated with the 
+release of this data or product. Specifically, no warranty is made that 
+the GIS data or any subsequent updates will be error free and no 
+warranty is made regarding the positional or thematic accuracy of the 
+GIS data. The GIS data and any features depicted do not represent or 
+confer any legal rights, privileges, benefits, boundaries or claims of 
+any kind. The Office of Planning and Sustainable Development encourages 
+users to report any discrepancies or errors found.  Contact:   Hawaii 
+Statewide GIS Program, Office of Planning and Sustainable Development, 
+State of Hawaii; PO Box 2359, Honolulu, Hi. 96804; (808) 587-2846; 
+email:   gis@hawaii.gov; Website:  https://planning.hawaii.gov/gis.</useconst>
+        <datacred>USGS, Hawaii Statewide GIS Program</datacred>
+    </idinfo>
+    <metainfo>
+        <metd>20201031</metd>
+        <metc>
+            <cntinfo>
+                <!--no contact person or organization name available-->
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metai

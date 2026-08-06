@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <pubdate>20070101</pubdate>
+                <title>benthic_habitat</title>
+                <edition>version 1.1</edition>
+                <geoform>vector digital data</geoform>
+                <pubinfo>
+                    <pubplace/>
+                    <publish>Analytical Laboratories of Hawaii</publish>
+                </pubinfo>
+                <onlink>https://geodata.hawaii.gov/arcgis/rest/services/CoastalMarine/MapServer/1</onlink>
+                <onlink>https://files.hawaii.gov/dbedt/op/gis/data/benthic_habitat.pdf</onlink>
+                <lworkcit>
+                    <citeinfo>
+                        <pubdate>20070101</pubdate>
+                        <title>Benthic Habitats of the Main Hawaiian Islands prepared form IKONOS and Quick Bird Satellite Imagery</title>
+                    </citeinfo>
+                </lworkcit>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>[Summary Metadata]  Benthic Habitat of the Main Hawaiian Islands as of 2007.  Downloaded from the National Centers for Coastal Ocean Science, Feb., 2018,   For additional information, please refer to metadata at https://files.hawaii.gov/dbedt/op/gis/data/benthic_habitat.pdf or contact Hawaii Statewide GIS Program, Office of Planning, State of Hawaii; PO Box 2359, Honolulu, Hi. 96804; (808) 587-2846; email: gis@hawaii.gov; Website: https://planning.hawaii.gov/gis. 
+This project is a cooperative effort between the National Ocean Service, National Centers for Coastal Ocean Science, Center for Coastal Monitoring and Assessment, the University of Hawaii, BAE Systems Spectral Solutions and Analytical Laboratories of Hawaii, LLC. The goal of the work was to map the coral reef habitats of the Main Eight Hawaiian Islands by visual interpretation and manual delineation of IKONOS and Quick Bird satellite imagery. A two tiered habitat classification system was tested and implemented in this work. It integrates geomorphologic reef structure and biological cover into a single scheme and subsets each into detail. It also includes fourteen zones.</abstract>
+            <purpose>Benthic Habitat of the Hawaiian Islands as of 2007.  Downloaded by Hawaii Statewide GIS Program, February, 2018.</purpose>
+        </descript>
+        <timeperd>
+            <timeinfo>
+                <rngdates>
+                    <begdate>20040101</begdate>
+                    <enddate>20070101</enddate>
+                </rngdates>
+            </timeinfo>
+            <current>ground condition</current>
+        </timeperd>
+        <status>
+            <progress>Complete</progress>
+            <update>None planned</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-156.07887</westbc>
+                <eastbc>-154.790154</eastbc>
+                <northbc>20.295631</northbc>
+                <southbc>18.888913</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>submerged aquatic vegetation</themekey>
+                <themekey>reef</themekey>
+                <themekey>cover</themekey>
+                <themekey>unconsolidated sediments</themekey>
+                <themekey>habitat</themekey>
+                <themekey>zone</themekey>
+                <themekey>coralline algae</themekey>
+                <themekey>structure</themekey>
+                <themekey>coral reef</themekey>
+            </theme>
+            <theme>
+                <themekt>ISO 19115 Topic Categories</themekt>
+                <themekey>structure</themekey>
+            </theme>
+            <place>
+                <placekt>None</placekt>
+                <placekey>United States</placekey>
+                <placekey>Main Eight Hawaiian Islands</placekey>
+            </place>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>State of Hawaii Terms of Use. 
+
+
+
+The
+ contents of this web page are public domain and to the extent indicated
+ otherwise in the Terms of Use, are exempt from Terms of Use policy 
+restrictions.There are no expressed warranties associated with the 
+release of this data or product. Specifically, no warranty is made that 
+the GIS data or any subsequent updates will be error free and no 
+warranty is made regarding the positional or thematic accuracy of the 
+GIS data. The GIS data and any features depicted do not represent or 
+confer any legal rights, privileges, benefits, boundaries or claims of 
+any kind. The Office of Planning encourages users to report any 
+discrepancies or errors found.  Contact: Hawaii Statewide GIS Program, Office of Planning, State of Hawaii; PO Box 2359, Honolulu, Hi. 96804; (808) 587-2846; email: gis@hawaii.gov. Website: https://planning.hawaii.gov/gis.</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>National Oceanic and Atmospheric Administration (NOAA), National Ocean Service (NOS), National Centers for Coastal Ocean Science (NCCOS), Center for Coastal Monitoring and Assessment (CCMA), Biogeography Program</cntorg>
+                </cntorgp>
+                <cntpos>Biogeography Team Leader, Mapping Manager</cntpos>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>1305 East West Highway</address>
+                    <city>Silver Spring</city>
+                    <state>MD</state>
+                    <postal>20910</postal>
+                </cntaddr>
+                <cntvoice>301-713-3028</cntvoice>
+                <cntfax>301-713-4384</cntfax>
+                <cntemail>tim.battista@noaa.gov</cntemail>
+                <hours>0800 - 1700, Monday to Friday, EST</hours>
+            </cntinfo>
+        </ptcontac>
+        <datacred>NOAA National Centers for Coastal Ocean Science; Hawaii Statewide GIS Program</datacred>
+        <native>Esri ArcGIS 10.5.1.7333</native>
+    </idinfo>
+    <dataqual>
+        <attracc>
+            <attraccr>This GIS polygon product was generated from a subset of fourteen image bundles which, when combined, constitute the approximately 85% of the Main Eight Hawaiian Islands. Aa statistical analysis that generates a Tau statistic was conducted. The Tau statistic for the major classes of structure and cover is 0.971 and 0.908 respectively. The Tau statistic for detailed structure and cover classes is 0.891 and 0.827 respectively.</attraccr>
+        </attracc>
+        <logic>All mapping was conducted from ortho-rectified IKONOS satellite imagery provided by BAE prior to map production. IKONOS and Quick Bird satellite imagery was corrected for atmospheric and water column effects, color balanced, pan sharpened and deglinted. During the digitizing process, image stretches and manipulating image contrast, brightness and color balance were performed in the ArcView Image Analysis Extension to enhance features in the processed imagery. GIS topologic quality was established by executing ArcView extension routines that check for: overlapping polygons, multipart polygons, sliver polygons and void polygons. Additionally checks for adjacent polygons with the same habitat attributes were completed. All errors were identified and corrected. This file is believed to be logically consistent.</logic>
+        <complete>BAE Systems acquired, processed and delivered ortho-rectified imagery to Analytical Laboratories of Hawaii. Delineation of all habitat boundaries was conducted with the image scale at 1:6,000 or less. This ensures that the level of detail produced by the photo interpreter is uniform throughout the project. The minimum mapping unit (MMU) for identifying habitats or features was 1 acre or less. The software utilized in this project was designed to alert the photo interpreter each time a polygon was drawn smaller than the a MMU of 1 acre. When this occurred the photo interpreter has the choice whether to include the polygon in the data set. Only in areas where local coral reef managers expressed interest in specific map classes or in Marine Protected Areas or for areas of land were polygons of smaller then the MMU allowed.</complete>
+        <posacc>
+            <horizpa>
+                <horizpar>RMS from digitized output was determined using the ESRI RMEer2 extension and shown to be &lt;1m for this work.</horizpar>
+            </horizpa>
+        </posacc>
+        <lineage>
+            <srcinfo>
+                <srccite>
+                    <citeinfo>
+                        <pubdate>20030101</pubdate>
+                        <title>Coral Reef Digitizing Extension</title>
+                    </citeinfo>
+                </srccite>
+                <typesrc>onLine</typesrc>
+                <srctime>
+                    <timeinfo>
+                        <sngdate>
+                            <caldate>20030101</caldate>
+                        </sngdate>
+                    </timeinfo>
+                    <srccurr>publication date</srccurr>
+                </srctime>
+                <srccitea>Coral Reef Digitizing Extension</srccitea>
+                <srccontr>This ArcView extension was used to digitize and attribute benthic zones, structure and biological cover of this map.</srccontr>
+            </srcinfo>
+            <srcinfo>
+                <srccite>
+                    <citeinfo>
+                        <pubdate>20042006</pubdate>
+                        <title>IKONOS Satellite Imagery</title>
+                    </citeinfo>
+                </srccite>
+                <typesrc>CD-ROM</typesrc>
+                <srctime>
+                    <timeinfo>
+                        <rngdates>
+                            <begdate>20030101</begdate>
+                            <enddate>20050101</enddate>
+                        </rngdates>
+                    </timeinfo>
+                    <srccurr>ground condition</srccurr>
+                </srctime>
+                <srccitea>IKONOS Satellite Imagery</srccitea>
+                <srccontr>Used to identify and digitize benthic habitats for the Main Eight Hawaiian Islands.</srccontr>
+            </srcinfo>
+            <srcinfo>
+                <srccite>
+                    <citeinfo>
+                        <pubdate>20030101</pubdate>
+                        <title>Classification Scheme for Benthic Habitats of the Pacific</title>
+                    </citeinfo>
+                </srccite>
+                <typesrc>None</typesrc>
+                <srctime>
+                    <timeinfo>
+                        <sngdate>
+                            <caldate>20030101</caldate>
+                        </sngdate>
+                    </timeinfo>
+                    <srccurr>publication date</srccurr>
+                </srctime>
+                <srccitea>Classification Scheme for Benthic Habitats of the Pacific</srccitea>
+                <srccontr>This document identified the zone, structure and biological cover types attributed in the data set</srccontr>
+            </srcinfo>
+            <procstep>
+                <procdesc>Benthic habitat maps were digitized by delineating habitat boundaries from ortho-rectified IKONOS and Quick Bird satellite imagery loaded into ArcView 3.3 GIS software with the Image Analysis and NOAA Coral Reef Habitat Digitizing extensions both activated. Digitizing was conducted using heads-up on computer screen methods with the minimum mapping unit (MMU) set to 1 acre and the image scale at 1:6,000. All remotely sensed imagery was processed by BAE prior to map production. The imagery was corrected for atmospheric and water column effects, pan sharpened and deglinted. During the digitizing process, images were stretched and contrast, brightness and color balance were modified using the Arc View Image Analysis Extension to enhance features in the processed imagery. A first draft map was completed and features in the imagery where uncertainties existed, due to confusing or difficult to interpret signatures, were identified for future ground validation effort. An ArcView GIS point theme was generated with points positioned on the features of uncertain habitat type or along transects though gradients between habitat types. The GIS points were converted to GPS waypoints using Trimble Pathfinder Software and were navigated to in the field using a Trimble GeoExplorer 3 GPS data logger. A benthic habitat characterization was conducted at each site by use of a tethered video camera snorkeling, free diving, or where water depth and clarity permitted, by observation from the surface. GPS data were collected at each location and site ID, depth, habitat type, zone and the method used to make the assessment were recorded. A second draft of the map was generated incorporating these field observations.</procdesc>
+                <procdate>20060101</procdate>
+            </procstep>
+        </lineage>
+    </dataqual>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>GT-polygon composed of chains</sdtstype>
+                <ptvctcnt>8762</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>benthic_habitat</enttypl>
+                <enttypd>Shapefile attribute table</enttypd>
+                <enttypds>None</enttypds>
+            </enttyp>
+            <attr>
+                <attrlabl>OBJECTID</attrlabl>
+                <attrdef>Internal feature number.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Sequential unique whole numbers that are automatically generated.</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>D_STRUCT</attrlabl>
+                <attrdef>Detailed structure</attrdef>
+                <attrdefs>Habitat digitizing extension</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Assigned during digitizing character field</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>POLYGONID</attrlabl>
+                <attrdef>Incremental value generated for QA/QC adjacency test</attrdef>
+                <attrdefs>ArcView script</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Incremental numeric field</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>UNIQUEID</attrlabl>
+                <attrdef>4 digit numerical value representing a unique habitat combination of structure and cover attributes</attrdef>
+                <attrdefs>Habitat digitizing extension</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <codesetd>
+                                                						
+                        
+                        <codesetn>Habitat description</codesetn>
+                                                						
+                        
+                        <codesets>Habitat classification scheme for the Pacific</codesets>
+                                                					
+                    
+                    </codesetd>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>M_STRUCT</attrlabl>
+                <attrdef>Major reef structure</attrdef>
+                <attrdefs>Habitat digitizing extension</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Assigned during digitizing character field</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>P_COVER</attrlabl>
+                <attrdef>Percent biological cover of major cover type</attrdef>
+                <attrdefs>Habitat classification scheme</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Assigned during digitizing character field</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>ZONE</attrlabl>
+                <attrdef>Geomorphologic zone</attrdef>
+                <attrdefs>Habitat classification scheme</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Assigned during digitizing character field</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>M_COVER</attrlabl>
+                <attrdef>Major biological cover</attrdef>
+                <attrdefs>Habitat classification scheme</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Assigned during digitizing</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>ACRES</attrlabl>
+                <attrdef>Area of polygon in acres</attrdef>
+                <attrdefs>ArcView script</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <rdom>
+                                                						
+                        
+                        <rdommin>0.002</rdommin>
+                                                						
+                        
+                        <rdommax>154995.021</rdommax>
+                                                						
+                        
+                        <attrunit>NA</attrunit>
+                                                					
+                    
+                    </rdom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>Shape</attrlabl>
+                <attrdef>Feature geometry.</attrdef>
+                <attrdefs>ESRI</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Coordinates defining the features.</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>COVER</attrlabl>
+            </attr>
+            <attr>
+                <attrlabl>Shape_Length</attrlabl>
+                <attrdef>Length of feature in internal units.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Positive real numbers that are automatically generated.</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>Shape_Area</attrlabl>
+                <attrdef>Area of feature in internal units squared.</attrdef>
+                <attrdefs>Esri</attrdefs>
+                <attrdomv>
+                                        					
+                    
+                    <udom>Positive real numbers that are automatically generated.</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+        </detailed>
+    </eainfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>National Oceanic and Atmospheric Administration (NOAA), National Ocean Service (NOS), National Centers for Coastal Ocean Science (NCCOS), Center for Coastal Monitoring and Assessment (CCMA), Biogeography Program</cntorg>
+                </cntorgp>
+                <cntpos>Biogeography Team Leader, Mapping Manager</cntpos>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>1305 East West Highway</address>
+                    <city>Silver Spring</city>
+                    <state>MD</state>
+                    <postal>20910</postal>
+                </cntaddr>
+                <cntvoice>301-713-3028</cntvoice>
+                <cntfax>301-713-4384</cntfax>
+                <cntemail>tim.battista@noaa.gov</cntemail>
+                <hours>0800 - 1700, Monday to Friday, EST</hours>
+            </cntinfo>
+        </distrib>
+        <distliab>The National Oceanic and Atmospheric Administration (NOAA) National Centers for Coastal Ocean Science (NCCOS) intends to publish this data on CD-ROM. NCCOS Biogeography Program does not guarantee the accuracy of the geographic features or attributes. Please see the metadata records for each data set for complete information on the source, limitations, and proper use.</distliab>
+        <custom>Contact NOAA for distribution options (see Distributor).</custom>
+    </distinfo>
+    <metainfo>
+        <metd>20180327</metd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>National Oceanic and Atmospheric Administration (NOAA), National Ocean Service (NOS), National Centers for Coastal Ocean Science (NCCOS), Center for Coastal Monitoring and Assessment (CCMA), Biogeography Program</cntorg>
+                </cntorgp>
+                <cntpos>Biogeography Team Leader, Mapping Manager</cntpos>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>1305 East West Highway</address>
+                    <city>Silver Spring</city>
+                    <state>MD</state>
+                    <postal>20910</postal>
+                </cntaddr>
+                <cntvoice>301-713-3028</cntvoice>
+                <cntfax>301-713-4384</cntfax>
+                <cntemail>tim.battista@noaa.gov</cntemail>
+                <hours>0800 - 1700, Monday to Friday, EST</hours>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>

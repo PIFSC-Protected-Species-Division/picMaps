@@ -193,3 +193,99 @@ lalo <- function(){
   y <- st_shift_longitude(y)
   return(y)
 }
+
+########################
+### State of HI data ###
+########################
+
+#' @title Oahu roads
+#' @importFrom sf read_sf
+#' @export
+oahu_roads <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "hi_state", "Oahu_Roads","Oahu_Roads.shp")
+  y <- read_sf(x)
+  return(y)
+}
+
+#' @title Watershed zones out to 3mi
+#' @importFrom sf read_sf
+#' @export
+hi_ridge_to_reef <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "hi_state", "Region_Ridge_to_Reef","Region_Ridge_to_Reef_(DAR).shp")
+  y <- read_sf(x)
+  return(y)
+}
+
+#' @title Watersheds
+#' @param type DAR version (`type="DAR"`; default) or `type="regular"`.
+#' @importFrom sf read_sf
+#' @export
+hi_watersheds <- function(type="DAR"){
+  if(type=="regular"){
+    x <- file.path(system.file(package="picMaps"), "inst", "hi_state", "Watersheds","Watersheds.shp")
+  } else {
+    x <- file.path(system.file(package="picMaps"), "inst", "hi_state", "Watersheds_(DAR)","Watersheds_(DAR_Version).shp")
+  }
+  y <- read_sf(x)
+  return(y)
+}
+
+#' @title HI Official State Coastline
+#' @importFrom sf read_sf
+#' @export
+hi_coast_state <- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "hi_state", "Coastline","Coastline.shp")
+  y <- read_sf(x)
+  y <- y[y$water==0,]
+  return(y)
+}
+
+#' @title Compile full layer of Main Hawaiian Island watersheds
+#' @importFrom sf read_sf
+#' @import dplyr
+#' @export
+hi_full_watersheds <- function(){
+  objectid <- region_nam <- region_id <- hawn_name <- isle <- NULL
+  hi <- hi_coast_state()
+  hi <- hi[hi$water==0,]
+  wsr <- hi_ridge_to_reef()
+  ws <- hi_watersheds("DAR")
+  n_ws <- nrow(ws)
+  ws_exp <- st_intersection(ws,wsr)
+  ws_exp$a <- st_area(ws_exp)
+  ws_exp <- ws_exp[order(ws_exp$a, decreasing=T),]
+  ws_exp <- ws_exp[1:n_ws,] |>
+    select(objectid, region_nam, region_id, hawn_name) |>
+    st_drop_geometry()
+  ws <- full_join(ws, ws_exp)
+  ws_exp <- st_intersection(ws,hi) |> select(objectid, isle) |> st_drop_geometry()
+  ws <- full_join(ws, ws_exp)
+  ## Add Kaho'olawe
+  kahoolawe <- hi[hi$isle=="kahoolawe",]
+  ws2 <- hi_watersheds("regular")[kahoolawe,]
+  n_ws2 <- nrow(ws2)
+  wsr2 <- wsr[ws2,]
+  ws2_exp <- st_intersection(ws2, wsr2)
+  ws2_exp$a <- st_area(ws2_exp)
+  ws2_exp <- ws2_exp[order(ws2_exp$a, decreasing = T),][1:n_ws2,] |>
+    select(objectid, region_nam, region_id, hawn_name) |>
+    st_drop_geometry()
+  ws2 <- full_join(ws2, ws2_exp)
+  ws2$isle <- "Kahoolawe"
+  ws2$objectid <- 2000 + ws2$objectid
+
+  out <- bind_rows(ws, ws2)
+}
+
+
+#' @title Import benthic habitat data for the Main Hawaiian Islands
+#' @importFrom sf read_sf
+#' @import dplyr
+#' @export
+hi_benthic_habitat<- function(){
+  x <- file.path(system.file(package="picMaps"), "inst", "hi_state", "Benthic_Habitat","Benthic_habitat.shp")
+  y <- read_sf(x)
+  y <- st_make_valid(y)
+  return(y)
+}
+

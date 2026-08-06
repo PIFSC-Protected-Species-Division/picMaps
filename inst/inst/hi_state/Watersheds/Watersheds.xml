@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <title>Watersheds</title>
+                <onlink>https://geodata.hawaii.gov/arcgis/rest/services/FreshWater/MapServer/8</onlink>
+                <onlink>https://files.hawaii.gov/dbedt/op/gis/data/watersheds_cwrm.pdf</onlink>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>[Metadata]  Description:  Surface Water Hyrdrologic Unit Boundaries (Watersheds) for the 8 major Hawaiian Islands.Source: GDSI, 1995, 1999; State of Hawaii Commission on Water Resource Management (CWRM), 2008.  Updated, August 2022. Note: The Hawaii Statewide GIS Program was notified in February 2023 that some values for the area_sqmi field were incorrect. GIS staff corrected the errors and republished the layer, March 2, 2023. Updated Jan/Feb 2024: Modified boundaries of several hydrologic units; added several new attributes, see full metadata for more information.For additional information, please refer to complete metadata at https://files.hawaii.gov/dbedt/op/gis/data/watersheds_cwrm.pdf or contact Hawaii Statewide GIS Program, Office of Planning and Sustainable Development, State of Hawaii; PO Box 2359, Honolulu, Hi. 96804; (808) 587-2846; email: gis@hawaii.gov; Website: https://planning.hawaii.gov/gis.</abstract>
+            <purpose>Watershed Unit Boundaries for the major Hawaiian Islands.</purpose>
+        </descript>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>Hawaii</themekey>
+                <themekey>Watersheds</themekey>
+                <themekey>inlandWaters</themekey>
+                <themekey>HawaiiStateGIS</themekey>
+                <themekey>histategis</themekey>
+                <themekey>State of Hawaii</themekey>
+                <themekey>Niihau</themekey>
+                <themekey>Kauai</themekey>
+                <themekey>Oahu</themekey>
+                <themekey>Molokai</themekey>
+                <themekey>Lanai</themekey>
+                <themekey>Maui</themekey>
+                <themekey>Kahoolawe</themekey>
+                <themekey>surface water</themekey>
+            </theme>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>State of Hawaii Terms of Use. 
+
+
+
+The
+ contents of this web page are public domain and to the extent indicated
+ otherwise in the Terms of Use, are exempt from Terms of Use policy 
+restrictions. There are no expressed warranties associated with the 
+release of this data or product. Specifically, no warranty is made that 
+the GIS data, or any subsequent updates will be error free and no 
+warranty is made regarding the positional or thematic accuracy of the 
+GIS data. The GIS data and any features depicted do not represent or 
+confer any legal rights, privileges, benefits, boundaries or claims of 
+any kind. The Office of Planning and Sustainable Development encourages users to report any 
+discrepancies or errors found. 
+ Contact: Hawaii Statewide GIS Program, Office of Planning and 
+Sustainable Development, State of Hawaii; PO Box 2359, Honolulu, Hi. 
+96804; (808) 587-2846; email: gis@hawaii.gov. Website: https://planning.hawaii.gov/gis.</useconst>
+        <datacred>State of Hawaii, DLNR, DOFAW; Hawaii Statewide GIS Program</datacred>
+    </idinfo>
+    <metainfo>
+        <metd>20201031</metd>
+        <metc>
+            <cntinfo>
+                <!--no contact person or organization name available-->
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</meta

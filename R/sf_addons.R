@@ -107,3 +107,36 @@ hex_size <- function(area=NULL, radius=NULL, sep=NULL){
   stop("Argument not specified.")
 }
 
+#' @title Divide a polygon into k equal-area polygons
+#' @description Uses k-means clustering and Voronoi tessellation to divide a polygon
+#' into k equal-area polygons.
+#' @param polygon The `sf` polygon object to be divided
+#' @param k The number of resulting polygons
+#' @param n_samples The number of sample points to perform k-means clustering and divide the polygon.
+#' @author Google Gemini
+#' @import sf
+#' @importFrom stats kmeans
+#' @export
+st_divide_poly <- function(polygon, k, n_samples = 10000) {
+  # 1. Sample dense random points inside the polygon
+  pts <- st_sample(polygon, size = n_samples, type="regular")
+  coords <- st_coordinates(pts)
+
+  # 2. Cluster points into k groups
+  set.seed(42)
+  km <- kmeans(coords, centers = k)
+
+  # 3. Get cluster centroids
+  centers <- st_as_sf(as.data.frame(km$centers), coords = c("X", "Y"), crs = st_crs(polygon))
+
+  # 4. Generate Voronoi polygons bounded by the original geometry bbox
+  voronoi <- st_voronoi(st_combine(centers), envelope = st_geometry(polygon)) %>%
+    st_collection_extract("POLYGON") %>%
+    st_sf()
+
+  # 5. Clip Voronoi regions to the original polygon boundary
+  result <- st_intersection(voronoi, polygon)
+  return(result)
+}
+
+
