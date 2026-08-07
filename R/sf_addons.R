@@ -139,4 +139,49 @@ st_divide_poly <- function(polygon, k, n_samples = 10000) {
   return(result)
 }
 
+#' @title Divide a polygon into Voronoi tessellations based on closeness to inner polygons instead of points
+#' @param outer_poly The `sf` polygon object to be divided
+#' @param inner_polys An `sf` data frame containing inner polygons to partition the outer polygon
+#' @param inner_id A column in `inner_polys` which will label the outer polygon partitions.
+#' @param sample_density The density of points used to fill the inner polygons
+#' to perform the partitioning. Defaults to `sample_density = 5000`.
+#' @author Google Gemini and Devin S. Johnson
+#' @import sf
+#' @importFrom stats kmeans
+#' @export
+
+st_partition_by_inner_polygons <- function(outer_poly, inner_polys, inner_id, sample_density = 5000) {
+  .data <- NULL
+  if(missing(inner_id)){
+    inner_polys$id <- 1:nrow(inner_polys)
+    inner_id <- "id"
+  }
+  # 1. Sample dense points from the inner polygons to capture their shape
+  pts <- st_sample(inner_polys, size = sample_density, type = "regular") %>%
+    st_as_sf()
+
+  # 2. Map sampled points back to their parent inner polygon ID
+  pts_joined <- st_join(pts, inner_polys)
+
+  # 3. Create a Voronoi diagram across all sampled points
+  voronoi <- st_voronoi(st_combine(pts_joined), envelope = st_geometry(outer_poly)) %>%
+    st_collection_extract("POLYGON") %>%
+    st_sf()
+
+  # 4. Spatial join to assign each Voronoi cell back to its original inner polygon ID
+  voronoi_tagged <- st_join(voronoi, pts_joined) |> st_make_valid()
+
+  # 5. Union cells sharing the same inner polygon ID to form cohesive regions
+  # Replace 'inner_id' with the actual primary key/column name of your inner polygons
+  partitioned <- voronoi_tagged %>%
+    group_by(.data[[inner_id]]) %>%
+    summarise()
+
+  # 6. Clip the final tessellation to the outer boundary shape
+  final_partition <- st_intersection(partitioned, outer_poly)
+
+  return(final_partition)
+}
+
+
 
