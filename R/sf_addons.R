@@ -184,4 +184,32 @@ st_partition_by_inner_polygons <- function(outer_poly, inner_polys, inner_id, sa
 }
 
 
+#' @title Check for 0-360 Lat/Lon data
+#' @param x An `sf`, `sfc`, `bbox` object
+#' @importFrom sf st_bbox
+#' @export
+st_check_lon <- function(x) {
+  # 1. Ensure object has a valid geometry
+  if (!inherits(x, c("sf", "sfc", "bbox"))) {
+    stop("Input must be an sf, sfc, or bbox object.")
+  }
+
+  # 2. Extract bounding box
+  bb <- st_bbox(x)
+  xmin <- bb[["xmin"]]
+  xmax <- bb[["xmax"]]
+
+  # 3. Evaluate coordinate bounds
+  if (xmin < 0) {
+    return("-180-180")
+  } else if (xmax > 180) {
+    return("0-360")
+  } else {
+    # If all points lie strictly between 0 and 180,
+    # it is valid in BOTH systems (e.g., Europe/Africa).
+    return("ambiguous (0-180)")
+  }
+}
+
+
 
