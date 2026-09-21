@@ -212,4 +212,18 @@ st_check_lon <- function(x) {
 }
 
 
+#' @title Check if spatial data bounds overlap dateline
+#' @param x An `sf` spatial data object
+#' @import sf
+#' @export
+st_overlap_dateline <- function(x){
+  if(!st_is_longlat(x)) x <- st_transform(x, 4326)
+  bb <- st_bbox(x) |> st_as_sfc()
+  dateline <- st_linestring(matrix(c(180, -90, 180, 90), ncol = 2, byrow = TRUE)) |>
+    st_sfc(crs = 4326)
+  overlap <-  any(st_intersects(bb, dateline, sparse=FALSE))
+  return(overlap)
+}
+
+
 
