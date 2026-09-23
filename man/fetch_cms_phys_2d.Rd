@@ -38,8 +38,6 @@ see `?CopernicusMarine::cms_download_subset` and `?CopernicusMarine::cms_get_use
 
 \item{password}{Copernicus Marine Service password,
 see `?CopernicusMarine::cms_download_subset` and `?CopernicusMarine::cms_get_password`}
-
-\item{...}{Ignored arguments}
 }
 \description{
 Download Copernicus Marine Service physical oceanography data (2d variables)

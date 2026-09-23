@@ -7,7 +7,6 @@
 #' @param return_type One of `"stars"` or `"raster"`. A `stars` object is the default.
 #' @param progress Output process of download.
 #' @param asset See `?CopernicusMarine::cms_download_subset`
-#' @param ... Ignored arguments
 #' @param username Copernicus Marine Service account username,
 #' see `?CopernicusMarine::cms_download_subset` and `?CopernicusMarine::cms_get_username`
 #' @param password Copernicus Marine Service password,
@@ -80,7 +79,6 @@ return(cms_data)
 #' @param return_type One of `"stars"` or `"raster"`. A `stars` object is the default.
 #' @param progress Output process of download.
 #' @param asset See `?CopernicusMarine::cms_download_subset`
-#' @param ... Ignored arguments
 #' @param username Copernicus Marine Service account username,
 #' see `?CopernicusMarine::cms_download_subset` and `?CopernicusMarine::cms_get_username`
 #' @param password Copernicus Marine Service password,
@@ -248,7 +246,6 @@ fetch_cms_phys_3d <- function(
 #' @param return_type One of `"stars"` or `"raster"`. A `stars` object is the default.
 #' @param progress Output process of download.
 #' @param asset See `?CopernicusMarine::cms_download_subset`
-#' @param ... Ignored arguments
 #' @param username Copernicus Marine Service account username,
 #' see `?CopernicusMarine::cms_download_subset` and `?CopernicusMarine::cms_get_username`
 #' @param password Copernicus Marine Service password,
