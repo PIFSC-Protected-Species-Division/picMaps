@@ -22,10 +22,9 @@ fetch_cms_phys_surface <- function(
     variable,
     layer,
     timerange,
-    return_type = "stars",
+    return_type = "raster",
     progress = FALSE,
     asset = "ARCO",
-    ...,
     username = NULL,
     password = NULL
 ){
@@ -43,7 +42,6 @@ fetch_cms_phys_surface <- function(
       return_type = return_type,
       progress = progress,
       asset = asset,
-      ...,
       username = username,
       password = password)
   } else{
@@ -59,7 +57,6 @@ fetch_cms_phys_surface <- function(
       return_type = return_type,
       progress = progress,
       asset = asset,
-      ...,
       username = username,
       password = password)
   } else{
@@ -99,10 +96,9 @@ fetch_cms_phys_3d <- function(
     layer,
     timerange,
     verticalrange = 0,
-    return_type = "stars",
+    return_type = "raster",
     progress = FALSE,
     asset = "ARCO",
-    ...,
     username = NULL,
     password = NULL
 ){
@@ -267,10 +263,9 @@ fetch_cms_phys_2d <- function(
     variable,
     layer,
     timerange,
-    return_type = "stars",
+    return_type = "raster",
     progress = FALSE,
     asset = "ARCO",
-    ...,
     username = NULL,
     password = NULL
 ){

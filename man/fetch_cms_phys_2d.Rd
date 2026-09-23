@@ -9,10 +9,9 @@ fetch_cms_phys_2d(
   variable,
   layer,
   timerange,
-  return_type = "stars",
+  return_type = "raster",
   progress = FALSE,
   asset = "ARCO",
-  ...,
   username = NULL,
   password = NULL
 )
@@ -34,13 +33,13 @@ any subset of `c("thetao","so","uo","vo")` any other variables will be ignored.}
 
 \item{asset}{See `?CopernicusMarine::cms_download_subset`}
 
-\item{...}{Ignored arguments}
-
 \item{username}{Copernicus Marine Service account username,
 see `?CopernicusMarine::cms_download_subset` and `?CopernicusMarine::cms_get_username`}
 
 \item{password}{Copernicus Marine Service password,
 see `?CopernicusMarine::cms_download_subset` and `?CopernicusMarine::cms_get_password`}
+
+\item{...}{Ignored arguments}
 }
 \description{
 Download Copernicus Marine Service physical oceanography data (2d variables)

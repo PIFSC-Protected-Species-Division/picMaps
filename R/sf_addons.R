@@ -200,14 +200,14 @@ st_check_lon <- function(x) {
   xmax <- bb[["xmax"]]
 
   # 3. Evaluate coordinate bounds
-  if (xmin < 0) {
+  if (xmin<0 | xmax<0) {
     return("-180-180")
-  } else if (xmax > 180) {
+  } else if (xmin>180 | xmax > 180) {
     return("0-360")
   } else {
     # If all points lie strictly between 0 and 180,
     # it is valid in BOTH systems (e.g., Europe/Africa).
-    return("ambiguous (0-180)")
+    return("ambiguous")
   }
 }
 

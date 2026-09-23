@@ -9,10 +9,9 @@ fetch_cms_phys_surface(
   variable,
   layer,
   timerange,
-  return_type = "stars",
+  return_type = "raster",
   progress = FALSE,
   asset = "ARCO",
-  ...,
   username = NULL,
   password = NULL
 )
@@ -33,13 +32,13 @@ data subsetting and download}
 
 \item{asset}{See `?CopernicusMarine::cms_download_subset`}
 
-\item{...}{Ignored arguments}
-
 \item{username}{Copernicus Marine Service account username,
 see `?CopernicusMarine::cms_download_subset` and `?CopernicusMarine::cms_get_username`}
 
 \item{password}{Copernicus Marine Service password,
 see `?CopernicusMarine::cms_download_subset` and `?CopernicusMarine::cms_get_password`}
+
+\item{...}{Ignored arguments}
 }
 \description{
 Download Copernicus Marine Service physical oceanography data (surface values)
